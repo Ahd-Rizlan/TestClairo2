@@ -1,0 +1,265 @@
+/* Modern Employee Details Styles */
+.employeeDetailsContainer {
+  padding: 1.5rem;
+  background-color: #f5f8fa;
+  min-height: 100vh;
+}
+
+.dashboardHeader {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboardTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.headerIcon {
+  color: #3498db;
+}
+
+/* Error and Loading States */
+.errorNotification {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #feeaea;
+  color: #e74c3c;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.loadingIndicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  color: #3498db;
+}
+
+.loadingSpinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(52, 152, 219, 0.3);
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Summary Card for Total Employees */
+.summaryCard {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.summaryCard:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.summaryIconWrapper {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: rgba(52, 152, 219, 0.1);
+  margin-right: 1.5rem;
+}
+
+.summaryIcon {
+  color: #3498db;
+}
+
+.summaryContent {
+  flex: 1;
+}
+
+.summaryTitle {
+  color: #6c757d;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+}
+
+.summaryValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Employee Cards Grid */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Employee Card Styling */
+.employeeCard {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.employeeCard:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.employeeCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.apprenticeCard::before {
+  background-color: #4361ee;
+}
+
+.attorneyCard::before {
+  background-color: #2ec4b6;
+}
+
+.cardHeader {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  align-items: center;
+}
+
+.cardIconWrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.apprenticeCard .cardIconWrapper {
+  background-color: rgba(67, 97, 238, 0.1);
+}
+
+.attorneyCard .cardIconWrapper {
+  background-color: rgba(46, 196, 182, 0.1);
+}
+
+.apprenticeCard .cardIcon {
+  color: #4361ee;
+}
+
+.attorneyCard .cardIcon {
+  color: #2ec4b6;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.cardBody {
+  padding: 1.25rem 1.5rem;
+}
+
+.cardDescription {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.statsRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.statBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #95a5a6;
+  margin-bottom: 0.25rem;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.cardFooter {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #f1f1f1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.viewDetailsButton {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3498db;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.viewDetailsButton:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .summaryCard {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .summaryIconWrapper {
+    margin: 0 0 1rem 0;
+  }
+}

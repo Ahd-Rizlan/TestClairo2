@@ -1,0 +1,673 @@
+/* Case Details Container */
+.caseDetailsContainer {
+  background-color: #f5f8fa;
+  padding: 1.5rem;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page Header */
+.pageHeader {
+ display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1rem;
+}
+
+.pageHeader h1 {
+color: #1e293b;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.025em;
+}
+.header-icon {
+  margin-right: 0.75rem;
+  color: #0f1a26;
+  font-size: 1.5rem;
+}
+/* Info Sections Layout */
+.infoSections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.back-button {
+  background-color: transparent;
+  border: none;
+  color: #000000;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 1.25rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  height: 2.5rem;
+  width: 2.5rem;
+  transition: all 0.2s ease;
+}
+/* Section Styling */
+.caseInfoSection,
+.attorneySection {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.sectionTitle {
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionIcon {
+  color: #2c3e50;
+}
+
+/* Case Details */
+.caseDetails {
+  padding: 1rem;
+}
+
+.detailItem {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.detailLabel {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-right: 0.5rem;
+}
+
+.detailValue {
+  color: #495057;
+}
+
+/* Status Select */
+.statusSelectWrapper {
+  display: inline-block;
+  min-width: 150px;
+}
+
+.statusSelect {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Attorney Profile */
+.attorneySection {
+  padding-bottom: 1rem;
+}
+
+.attorneyProfile {
+  display: flex;
+  padding: 1rem;
+  align-items: flex-start;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.attorneyAvatar {
+  width: 64px;
+  height: 64px;
+  margin-right: 1rem;
+  color: #2c3e50;
+  flex-shrink: 0;
+}
+
+.attorneyDetails {
+  flex: 1;
+}
+
+.attorneyName {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.contactIcon {
+  margin-right: 0.5rem;
+  width: 16px;
+  height: 16px;
+  color: #6c757d;
+}
+
+/* No Attorney Alert */
+.noAttorneyAlert {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.alertIcon {
+  margin-right: 0.5rem;
+  color: #ffc107;
+}
+
+.noAttorneyAlert p {
+  margin: 0;
+  color: #6c757d;
+}
+
+/* Case Ownership Actions */
+.caseOwnershipActions {
+  padding: 1rem;
+}
+
+.ownershipTitle {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.handoverControls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.lawyerSelect {
+  flex: 1;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+.actionButton {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #0f1a26;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.actionButton:hover {
+  background-color: #2980b9;
+}
+
+/* Tab Navigation */
+.tabNavigation {
+  display: flex;
+  background-color: white;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.tabButton {
+  flex: 1;
+  min-width: 100px;
+  padding: 1rem 0.5rem;
+  border: none;
+  background: none;
+  font-size: 0.875rem;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  border-bottom: 2px solid transparent;
+}
+
+.tabButton:hover {
+  color: #3498db;
+  background-color: #f8f9fa;
+}
+
+.activeTab {
+  color: #0f1a26;
+  border-bottom: 2px solid #0f1a26;
+  font-weight: 600;
+}
+
+/* Tab Content */
+.tabContent {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.contentHeader h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.headerActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Buttons */
+.addButton,
+.uploadButton,
+.historyButton {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.addButton {
+  background-color: #0f1a26;
+}
+
+.addButton:hover {
+  background-color: #6783a1;
+}
+
+.uploadButton {
+  background-color: #0f1a26;
+}
+
+.uploadButton:hover {
+  background-color: #6783a1;
+}
+
+.historyButton {
+  background-color: #0f1a26;
+}
+
+.historyButton:hover {
+  background-color: #6783a1;
+}
+
+/* Tables */
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.dataTable th {
+  text-align: left;
+  padding: 0.75rem;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #e9ecef;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.dataTable td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e9ecef;
+  color: #495057;
+}
+
+.dataTable tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Update this CSS in your CaseDetails.module.css */
+
+/* Modern Monochromatic Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.viewButton,
+.editButton,
+.deleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #495057;
+  transition: color 0.2s ease;
+}
+
+.viewButton:hover {
+  color: #3498db;
+}
+
+.editButton:hover {
+  color: #f39c12;
+}
+
+.deleteButton:hover {
+  color: #e74c3c;
+}
+
+/* Icon size for table actions */
+.actionIcon {
+  width: 18px;
+  height: 18px;
+}
+/* Status Badge */
+.statusBadge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+}
+
+.statusBadge.pending {
+  background-color: #f39c12;
+  color: white;
+}
+
+.statusBadge.completed {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.statusBadge.inprogress,
+.statusBadge.in_progress {
+  background-color: #3498db;
+  color: white;
+}
+
+.statusBadge.overdue {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Empty States */
+.emptyState {
+  color: #6c757d;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+  font-style: italic;
+}
+
+/* Multi Select */
+.multiSelect {
+  width: 100%;
+  height: 150px;
+  padding: 0.375rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+/* Add Section */
+.addSection {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+}
+
+.addSection h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+/* Document Dropzone */
+.documentDropzone {
+  border: 2px dashed #ced4da;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.documentDropzone.dragging {
+  border-color: #3498db;
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+.dropzoneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.uploadIcon {
+  color: #3498db;
+  margin-bottom: 1rem;
+}
+
+.dragText {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.orText {
+  color: #6c757d;
+  margin: 0.5rem 0;
+}
+
+.fileInputLabel {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: white;
+  background-color: #3498db;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.fileInputLabel:hover {
+  background-color: #2980b9;
+}
+
+.fileInput {
+  display: none;
+}
+
+/* Upload Progress */
+.uploadError {
+  padding: 0.75rem;
+  margin-top: 1rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-radius: 0.25rem;
+}
+
+.uploadProgress {
+  height: 20px;
+  margin-top: 1rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  width: 0;
+  background-color: #3498db;
+  transition: width 0.3s ease;
+}
+
+.uploadProgress span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #212529;
+  font-size: 0.75rem;
+}
+
+/* File List */
+.selectedFiles {
+  text-align: left;
+  margin-top: 1.5rem;
+}
+
+.selectedFiles h4 {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.filesList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.fileIcon {
+  color: #3498db;
+  margin-right: 0.5rem;
+}
+
+.fileName {
+  flex: 1;
+  color: #2c3e50;
+}
+
+.fileSize {
+  color: #6c757d;
+  font-size: 0.75rem;
+}
+
+/* Document Link */
+.documentLink {
+  display: flex;
+  align-items: center;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.documentLink:hover {
+  text-decoration: underline;
+}
+
+/* Section Subtitle */
+.sectionSubtitle {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin: 1.5rem 0 1rem 0;
+  font-weight: 600;
+}
+
+/* Amount Cell */
+.amountCell {
+  font-weight: 600;
+  color: #2ecc71;
+}
+
+/* Error Notification */
+.errorNotification {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+  .infoSections {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabNavigation {
+    flex-wrap: wrap;
+  }
+  
+  .tabButton {
+    flex: 0 0 33.333%;
+  }
+  
+  .handoverControls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .handoverControls select,
+  .handoverControls button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}

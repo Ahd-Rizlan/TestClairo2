@@ -1,0 +1,220 @@
+/* CaseHistory.module.css */
+.caseHistoryContainer {
+    background-color: #f8fafc;
+    padding: 1.5rem;
+    min-height: 100%;
+  }
+  
+  /* Header Section */
+  .headerSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .back-button {
+  background-color: #f1f5f9;
+  border: none;
+  color: #000000;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 1.25rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  height: 2.5rem;
+  width: 2.5rem;
+  transition: all 0.2s ease;
+}
+  .headerSection h1 {
+    color: #1e293b;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .headerIcon {
+    color: #2563eb;
+    margin-right: 0.75rem;
+  }
+  
+  .caseInfo {
+    background-color: #f0f9ff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #bae6fd;
+    color: #0c4a6e;
+  }
+  
+  .caseNumber {
+    font-size: 0.95rem;
+  }
+  
+  /* Notification */
+  .notification {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid #ef4444;
+  }
+  
+  .notificationIcon {
+    margin-right: 0.75rem;
+  }
+  
+  /* Loading State */
+  .loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin: 2rem 0;
+  }
+  
+  .spinner {
+    border: 4px solid rgba(37, 99, 235, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #2563eb;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Table Styles */
+  .tableContainer {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  
+  .updatesTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .updatesTable th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+  }
+  
+  .updatesTable td {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+  }
+  
+  .updatesTable tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .updatesTable tr:hover {
+    background-color: #f8fafc;
+  }
+  
+  .descriptionCell {
+    max-width: 300px;
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  .actionColumn {
+    width: 80px;
+    text-align: center;
+  }
+  
+  .actionCell {
+    text-align: center;
+  }
+  
+  .actionButton {
+    background-color: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .actionButton:hover {
+    background-color: rgba(37, 99, 235, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .actionButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+  }
+  
+  /* Empty State */
+  .emptyState {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .emptyIcon {
+    font-size: 3rem;
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+  }
+  
+  .emptyState p {
+    color: #475569;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .headerSection {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .caseInfo {
+      width: 100%;
+    }
+    
+    .tableContainer {
+      overflow-x: auto;
+    }
+    
+    .updatesTable {
+      min-width: 650px;
+    }
+  }

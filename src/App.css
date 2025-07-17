@@ -93,16 +93,16 @@ a {
   transition: all 0.2s ease;
 }
 
-a:hover {
+/* a:hover {
   color: #7c3aed;
   text-decoration: underline;
-}
+} */
 
-a:focus {
+/* a:focus {
   outline: 2px solid #4f46e5;
   outline-offset: 2px;
   border-radius: 4px;
-}
+} */
 
 /* Buttons */
 button {
@@ -120,10 +120,10 @@ button:disabled {
   opacity: 0.6;
 }
 
-button:focus {
+/* button:focus {
   outline: 2px solid #4f46e5;
   outline-offset: 2px;
-}
+} */
 
 /* Form Elements */
 input,

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import "./Header.css";
+import { FaArrowLeft, FaAlignJustify, FaChevronLeft } from "react-icons/fa";
 import LanguageSlider from "../layouts/LanguageSlider.js";
 
 const Header = ({ toggleSidebar, sidebarOpen, onLogout }) => {
@@ -38,7 +39,7 @@ const Header = ({ toggleSidebar, sidebarOpen, onLogout }) => {
           onClick={toggleSidebar}
           aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
         >
-          {sidebarOpen ? "⇤" : "☰"}
+          {sidebarOpen ? <FaChevronLeft /> : <FaAlignJustify />}
         </button>
 
         {/* Page title */}
@@ -54,7 +55,7 @@ const Header = ({ toggleSidebar, sidebarOpen, onLogout }) => {
             <div className="user-avatar">
               {username ? username.charAt(0).toUpperCase() : "A"}
             </div>
-            <span className="user-name">{username || "Attorney"}</span>
+            {/* <span className="user-name">{username || "Attorney"}</span> */}
             <span className="dropdown-arrow">▼</span>
           </button>
 

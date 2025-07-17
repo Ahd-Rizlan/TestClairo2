@@ -1,249 +1,263 @@
 /* CaseBoard Styles */
 .caseBoardContainer {
-    background-color: #f5f8fa;
-    padding: 1.5rem;
-    min-height: 100%;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 2rem;
+  min-height: 100vh;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .header {
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .header h2 {
-    color: #2c3e50;
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-  .headerIcon {
+}
+
+.header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header h2 {
+  color:  linear-gradient(135deg, var(--indigo-base), #7c3aed);
+
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.headerIcon {
   color: #0f1a26;
   font-size: 1.5rem;
   margin-right: 0.75rem;
 }
 
-  .backButton {
-    background-color: transparent;
-    color: #0f1a26;
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.backButton {
+  background-color: #e2e8f0;
+  color: #0f1a26;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.backButton:hover {
+  background-color: #cbd5e1;
+}
+
+.notification {
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.errorNotification {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.spinner {
+  border: 4px solid rgba(52, 152, 219, 0.2);
+  border-top: 4px solid #0f1a26;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
-  
-  
-  
-  /* Notification Styles */
-  .notification {
-    padding: 1rem;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .errorNotification {
-    background-color: #feeaea;
-    color: #e74c3c;
-  }
-  
-  /* Loading Styles */
-  .loadingContainer {
-    display: flex;
+}
+
+.searchFilterContainer {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.searchBar {
+  display: flex;
+  gap: 1rem;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #2c3e50;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: #0f1a26;
+  outline: none;
+}
+
+.searchButton {
+  background-color: #0f1a26;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.searchButton:hover {
+  background-color: #1e3a8a;
+}
+
+.caseTypeFilter {
+  margin-top: 1rem;
+}
+
+.caseTypeFilter h3 {
+  color: #1e293b;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.checkboxGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkboxContainer input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #0f1a26;
+}
+
+.checkboxContainer label {
+  color: #334155;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.addCaseButton {
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.addCaseButton:hover {
+  background-color: #3b82f6;
+}
+
+.caseCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.caseCard {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.caseCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.caseCard h3 {
+  color: #0f1a26;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.caseCard p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.noCases {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  color: #1e293b;
+}
+
+@media (max-width: 768px) {
+  .header {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
+    align-items: flex-start;
+    gap: 1rem;
   }
-  
-  .spinner {
-    border: 4px solid rgba(52, 152, 219, 0.2);
-    border-top: 4px solid #0f1a26;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    margin-bottom: 1rem;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  /* Search and Filter Styles */
-  .searchFilterContainer {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
+
   .searchBar {
-    display: flex;
-    gap: 0.75rem;
-  }
-  
-  .searchInput {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: #2c3e50;
-    transition: border-color 0.2s ease;
-  }
-  
-  .searchInput:focus {
-    border-color: #0f1a26;
-    outline: none;
-  }
-  
-  .searchButton {
-    background-color: #0f1a26;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 0.75rem 1.25rem;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .searchButton:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Case Type Filter */
-  .caseTypeFilter {
-    margin-top: 1rem;
-  }
-  
-  .caseTypeFilter h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-  
-  .checkboxGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 0.75rem;
-  }
-  
-  .checkboxContainer {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .checkboxContainer input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-    accent-color: #0f1a26;
-  }
-  
-  .checkboxContainer label {
-    color: #2c3e50;
-    cursor: pointer;
-    font-size: 0.95rem;
-  }
-  
-  /* Add Case Button */
-  .addCaseButton {
-    background-color: #0f1a26;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 0.75rem 1.25rem;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .addCaseButton:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Case Cards */
-  .caseCards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .caseCard {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-    display: flex;
     flex-direction: column;
   }
-  
-  .caseCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+  .checkboxGrid {
+    grid-template-columns: 1fr;
   }
-  
-  .caseCard h3 {
-    color: #0f1a26;
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
+
+  .caseCards {
+    grid-template-columns: 1fr;
   }
-  
-  .caseCard p {
-    color: #6c757d;
-    font-size: 0.95rem;
-  }
-  
-  .noCases {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-    
-    .searchBar {
-      flex-direction: column;
-    }
-    
-    .checkboxGrid {
-      grid-template-columns: 1fr;
-    }
-    
-    .caseCards {
-      grid-template-columns: 1fr;
-    }
-  }
+}

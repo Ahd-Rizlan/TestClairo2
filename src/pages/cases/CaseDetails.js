@@ -709,7 +709,7 @@ const CaseDetails = ({ userInfo }) => {
               <div className={styles.caseInfoHeader}>
                 <button
                   onClick={() => navigate(`/case/update/${caseId}`)}
-                  className={styles.viewButton}
+                  className={styles.pencilIconButton}
                   title={t("Edit Case")}
                 >
                   <Pencil className={styles.actionIcon} />

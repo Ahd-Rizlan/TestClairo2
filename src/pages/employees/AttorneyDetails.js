@@ -71,7 +71,7 @@ const AttorneyDetails = () => {
     }
     const { data: assignedCases, error: caseCheckError } = await supabase
       .from("cases")
-      .select("case_id") 
+      .select("case_id")
       .eq("lawyer_id", lawyerId);
 
     if (caseCheckError) {
@@ -132,7 +132,7 @@ const AttorneyDetails = () => {
         </button>
         <div className={styles.titleContainer}>
           <FontAwesomeIcon icon={faUserTie} className={styles.headerIcon} />
-          <h2>{t("Attorney_at_law_details")}</h2>
+          <h2>{t("AttorneyDetails")}</h2>
         </div>
         <div></div>
       </div>
@@ -151,15 +151,15 @@ const AttorneyDetails = () => {
 
       {/* Dashboard Cards */}
       <div className={styles.dashboardCards}>
-        <div className={styles.card}>
-          <div className={styles.cardIcon}>
+        {/* <div className={styles.card}> */}
+        {/* <div className={styles.cardIcon}>
             <FontAwesomeIcon icon={faUserTie} />
-          </div>
-          <div className={styles.cardContent}>
-            <h3>{t("total_attorneys")}</h3>
-            <div className={styles.count}>{lawyers.length}</div>
-          </div>
+          </div> */}
+        <div className={styles.cardContent}>
+          <h3>{t("TotalAttorneys")}</h3>
+          <div className={styles.count}>{lawyers.length}</div>
         </div>
+        {/* </div> */}
       </div>
 
       {/* Loading State */}
@@ -193,75 +193,83 @@ const AttorneyDetails = () => {
               </p>
             </div>
           ) : (
-            <div className={styles.tableResponsive}>
-              <table className={styles.lawyersTable}>
-                <thead>
-                  <tr>
-                    <th>
-                      <div className={styles.thContent}>{t("Name")}</div>
-                    </th>
-                    <th>
-                      <div className={styles.thContent}>{t("Email")}</div>
-                    </th>
-                    <th>
-                      <div className={styles.thContent}>{t("Contact_No")}</div>
-                    </th>
-                    <th>
-                      <div className={styles.thContent}>
-                        {t("Language_Competency")}
-                      </div>
-                    </th>
-                    <th>
-                      <div className={styles.thContent}>
-                        {t("Years_Of_Experience")}
-                      </div>
-                    </th>
-                    <th>{t("Actions")}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredLawyers.map((lawyer) => (
-                    <tr key={lawyer.lawyer_id}>
-                      <td data-label={t("Name")}>
-                        <div className={styles.nameCell}>
-                          <div className={styles.avatar}>
-                            {lawyer.name?.charAt(0).toUpperCase() || "A"}
-                          </div>
-                          <span>{lawyer.name}</span>
+            <div className={styles.tableCard}>
+              <div className={styles.tableResponsive}>
+                <table className={styles.lawyersTable}>
+                  <thead>
+                    <tr>
+                      <th>
+                        <div className={styles.thContent}>{t("Name")}</div>
+                      </th>
+                      <th>
+                        <div className={styles.thContent}>{t("Email")}</div>
+                      </th>
+                      <th>
+                        <div className={styles.thContent}>
+                          {t("Contact_No")}
                         </div>
-
-                        {/* {lawyer.name} */}
-                      </td>
-                      <td data-label={t("Email")}>{lawyer.email}</td>
-                      <td data-label={t("Contact_No")}>{lawyer.contact_no}</td>
-                      <td data-label={t("Language_Competency")}>
-                        {lawyer.language_competency}
-                      </td>
-                      <td data-label={t("Years_Of_Experience")}>
-                        {lawyer.years_of_experience}
-                      </td>
-                      <td data-label={t("Actions")}>
-                        <div className={styles.actionButtons}>
-                          <button
-                            onClick={() => handleUpdateClick(lawyer.lawyer_id)}
-                            className={styles.editButton}
-                            title={t("update_attorney")}
-                          >
-                            <FontAwesomeIcon icon={faEdit} />
-                          </button>
-                          <button
-                            onClick={() => handleDelete(lawyer.lawyer_id)}
-                            className={styles.deleteButton}
-                            title={t("delete_attorney")}
-                          >
-                            <FontAwesomeIcon icon={faTrashCan} />
-                          </button>
+                      </th>
+                      <th>
+                        <div className={styles.thContent}>
+                          {t("Language_Competency")}
                         </div>
-                      </td>
+                      </th>
+                      <th>
+                        <div className={styles.thContent}>
+                          {t("Years_Of_Experience")}
+                        </div>
+                      </th>
+                      <th>{t("Actions")}</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {filteredLawyers.map((lawyer) => (
+                      <tr key={lawyer.lawyer_id}>
+                        <td data-label={t("Name")}>
+                          <div className={styles.nameCell}>
+                            <div className={styles.avatar}>
+                              {lawyer.name?.charAt(0).toUpperCase() || "A"}
+                            </div>
+                            <span>{lawyer.name}</span>
+                          </div>
+
+                          {/* {lawyer.name} */}
+                        </td>
+                        <td data-label={t("Email")}>{lawyer.email}</td>
+                        <td data-label={t("Contact_No")}>
+                          {lawyer.contact_no}
+                        </td>
+                        <td data-label={t("Language_Competency")}>
+                          {lawyer.language_competency}
+                        </td>
+                        <td data-label={t("Years_Of_Experience")}>
+                          {lawyer.years_of_experience}
+                        </td>
+                        <td data-label={t("Actions")}>
+                          <div className={styles.actionButtons}>
+                            <button
+                              onClick={() =>
+                                handleUpdateClick(lawyer.lawyer_id)
+                              }
+                              className={styles.editButton}
+                              title={t("update_attorney")}
+                            >
+                              <FontAwesomeIcon icon={faEdit} />
+                            </button>
+                            <button
+                              onClick={() => handleDelete(lawyer.lawyer_id)}
+                              className={styles.deleteButton}
+                              title={t("delete_attorney")}
+                            >
+                              <FontAwesomeIcon icon={faTrashCan} />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           )}
         </div>

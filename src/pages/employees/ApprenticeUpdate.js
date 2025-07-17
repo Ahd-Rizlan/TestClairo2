@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { supabase } from "../../supabaseClient";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 import {
   FaUserGraduate,
-  FaArrowLeft,
   FaExclamationTriangle,
   FaUser,
   FaEnvelope,
@@ -12,7 +14,7 @@ import {
   FaGraduationCap,
   FaCalendarAlt,
 } from "react-icons/fa";
-import styles from "./ApprenticeUpdateForm.module.css"; 
+import styles from "./ApprenticeUpdateForm.module.css";
 
 const ApprenticeUpdateForm = () => {
   const { t } = useTranslation();
@@ -119,18 +121,25 @@ const ApprenticeUpdateForm = () => {
 
   return (
     <div className={styles.formContainer}>
-      <div className={styles.formHeader}>
+      <div className={styles.header}>
         <button
           className={styles.backButton}
           onClick={() => navigate(-1)}
           aria-label={t("Back")}
         >
-          <FaArrowLeft />
+          <h2>
+            {" "}
+            <FontAwesomeIcon
+              icon={faArrowLeft}
+              className={styles["headerIcon"]}
+            />
+          </h2>
         </button>
         <h2>
           <FaUserGraduate className={styles.headerIcon} />{" "}
           {t("UpdateApprenticeDetails", "Update Apprentice Details")}
         </h2>
+        <div></div>
       </div>
 
       {/* Notification area */}

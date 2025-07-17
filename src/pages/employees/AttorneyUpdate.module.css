@@ -1,218 +1,316 @@
-/* LawyerUpdateForm Styles */
+/* LawyerUpdateForm.module.css */
+
+:root {
+  --indigo-base: #4f46e5;
+  --indigo-dark: #2c3e50;
+  --gray-light: #f8fafc;
+  --gray-medium: #e2e8f0;
+  --gray-dark: #475569;
+  --success-green: #22c55e;
+  --error-red: #ef4444;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Layout */
 .formContainer {
-    background-color: #f5f8fa;
-    padding: 1.5rem;
-    min-height: 100%;
+  background: linear-gradient(135deg, var(--gray-light), white);
+  padding: 2rem;
+  min-height: 100%;
+  transition: var(--transition);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--gray-medium);
+  padding-bottom: 1rem;
+}
+
+.header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--indigo-dark);
+  background: linear-gradient(135deg, var(--indigo-base), #7c3aed);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.headerIcon {
+  margin-right: 0.75rem;
+  font-size: 1.5rem;
+  color: var(--indigo-dark);
+}
+
+.backButton {
+  background-color: var(--gray-medium);
+  border: none;
+  color: var(--indigo-dark);
+  font-size: 1.125rem;
+  cursor: pointer;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.backButton:hover {
+  background-color: #e0e7ff;
+  transform: translateX(-2px);
+}
+
+.backButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
+}
+
+/* Notifications */
+.notification {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  animation: slideIn 0.3s ease forwards;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.successNotification {
+  background-color: #dcfce7;
+  color: #166534;
+  border-left: 4px solid var(--success-green);
+}
+
+.errorNotification {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border-left: 4px solid var(--error-red);
+}
+
+/* Loading */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background-color: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-medium);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.spinner {
+  border: 4px solid rgba(99, 102, 241, 0.1);
+  border-top: 4px solid var(--indigo-base);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Form Card */
+.formCard {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--gray-medium);
+}
+
+/* Form Group */
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--gray-dark);
+  font-weight: 600;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1.5px solid var(--gray-medium);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  background-color: var(--gray-light);
+  transition: var(--transition);
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--indigo-base);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+  background-color: white;
+}
+
+/* Checkboxes */
+.checkboxGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  min-width: 120px;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  accent-color: var(--indigo-dark);
+}
+
+.checkboxLabel {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Actions */
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-medium);
+}
+
+.submitButton,
+.cancelButton {
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, var(--indigo-base), #7c3aed);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.25);
+}
+
+.submitButton:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
+  transform: none;
+}
+
+.cancelButton {
+  background-color: white;
+  color: var(--gray-dark);
+  border: 1.5px solid var(--gray-medium);
+}
+
+.cancelButton:hover {
+  background-color: var(--gray-light);
+  border-color: #cbd5e1;
+  color: #334155;
+  transform: translateY(-2px);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
   
+}
+
+.backButton:hover {
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -1px rgba(79, 70, 229, 0.4);
+}
+
+.backButton:active {
+  transform: translateY(0);
+}
+
+.backButton:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+/* Responsive */
+@media (max-width: 768px) {
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .header h2 {
-    color: #2c3e50;
-    font-size: 2rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-  }
-  
-  .headerIcon {
-    margin-right: 0.75rem;
-    color: #2c3e50;
-  }
-  
-  .backButton {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: transparent;
-    border: none;
-    border-radius: 4px;
-    color: #2c3e50;
-    font-size: 0.875rem;
-    cursor: pointer;
-    /* transition: all 0.2s ease; */
-  }
-  
- 
-  /* Notification Styles */
-  .notification {
-    padding: 1rem;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .errorNotification {
-    background-color: #feeaea;
-    color: #e74c3c;
-  }
-  
-  .successNotification {
-    background-color: #eafee5;
-    color: #27ae60;
-  }
-  
-  /* Loading Styles */
-  .loadingContainer {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
+    align-items: flex-start;
+    gap: 1rem;
   }
-  
-  .spinner {
-    border: 4px solid rgba(52, 152, 219, 0.2);
-    border-top: 4px solid #3498db;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    margin-bottom: 1rem;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  /* Form Card */
+
   .formCard {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    border-radius: var(--radius-md);
   }
-  
-  /* Form Elements */
-  .formGroup {
-    margin-bottom: 1.5rem;
-  }
-  
-  .formGroup label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
-    font-weight: 500;
-  }
-  
-  .formInput {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #dfe6e9;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-  
-  .formInput:focus {
-    outline: none;
-    border-color: #2c3e50;
-    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
-  }
-  
-  /* Checkbox Styles */
-  .checkboxGroup {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-  
-  .checkboxContainer {
-    display: flex;
-    align-items: center;
-    min-width: 120px;
-  }
-  
-  .checkbox {
-    margin-right: 0.5rem;
-    cursor: pointer;
-    width: 18px;
-    height: 18px;
-    accent-color: #2c3e50;
-  }
-  
-  .checkboxLabel {
-    cursor: pointer;
-    font-weight: normal;
-    user-select: none;
-  }
-  
-  /* Action Buttons */
+
   .formActions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 2rem;
+    flex-direction: column;
   }
-  
+
   .submitButton,
   .cancelButton {
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    width: 100%;
   }
-  
-  .submitButton {
-    background-color: #2c3e50;
-    color: white;
-    border: none;
-  }
-  
-  .submitButton:hover:not(:disabled) {
-    background-color: #2980b9;
-  }
-  
-  .submitButton:disabled {
-    background-color: #95a5a6;
-    cursor: not-allowed;
-  }
-  
-  .cancelButton {
-    background-color: #f5f5f5;
-    color: #2c3e50;
-    border: 1px solid #dfe6e9;
-  }
-  
-  .cancelButton:hover {
-    background-color: #2c3e50;
-    color: white;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-    
-    .backButton {
-      align-self: flex-start;
-    }
-    
-    .checkboxGroup {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    
-    .formActions {
-      flex-direction: column;
-    }
-    
-    .submitButton,
-    .cancelButton {
-      width: 100%;
-    }
-  }
+}

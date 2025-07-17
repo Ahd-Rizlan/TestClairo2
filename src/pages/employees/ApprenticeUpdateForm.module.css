@@ -1,317 +1,393 @@
 /* ApprenticeUpdateForm.module.css */
+
+:root {
+  --indigo-base: #4f46e5;
+  --indigo-dark: #2c3e50;
+  --gray-light: #f8fafc;
+  --gray-medium: #e2e8f0;
+  --gray-dark: #475569;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .formContainer {
-    background-color: #f8fafc;
-    padding: 2rem;
-    min-height: 100%;
-    transition: all 0.3s ease;
+  background: linear-gradient(135deg, var(--gray-light), white);
+  padding: 2rem;
+  min-height: 100%;
+  transition: var(--transition);
+}
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--gray-medium);
+  padding-bottom: 1rem;
+}
+
+.formHeader h2 {
+  color: var(--indigo-dark);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, var(--indigo-base), #7c3aed);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--gray-medium);
+  padding-bottom: 1rem;
+}
+
+.header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--indigo-dark);
+  background: linear-gradient(135deg, var(--indigo-base), #7c3aed);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.headerIcon {
+  margin-right: 0.75rem;
+  font-size: 1.5rem;
+  color: var(--indigo-dark);
+}
+
+.headerIcon {
+  margin-right: 0.75rem;
+  color: var(--indigo-dark);
+  font-size: 1.5rem;
+}
+
+.backButton {
+  background-color: var(--gray-medium);
+  border: none;
+  color: var(--indigo-dark);
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin-right: 1.25rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  height: 2.5rem;
+  width: 2.5rem;
+  transition: var(--transition);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.backButton:hover {
+  background-color: #e0e7ff;
+  color: #1e293b;
+  transform: translateX(-2px);
+}
+
+.backButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
+}
+
+/* Loading State */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--gray-medium);
+}
+
+.spinner {
+  border: 4px solid rgba(99, 102, 241, 0.1);
+  border-top: 4px solid var(--indigo-base);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
-  
-  .formHeader {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 1rem;
+}
+
+.loadingContainer p {
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.cardContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.formCard {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
+  padding: 2.5rem;
+  border: 1px solid var(--gray-medium);
+  transition: var(--transition);
+}
+
+/* Form Group */
+.formGroup {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.formGroup label {
+  display: flex;
+  align-items: center;
+  color: var(--gray-dark);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.inputIcon {
+  margin-right: 0.5rem;
+  color: var(--indigo-dark);
+  font-size: 1rem;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1.5px solid var(--gray-medium);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: var(--gray-light);
+  color: #1e293b;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: var(--indigo-base);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+  background-color: white;
+}
+
+.formGroup input::placeholder {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.formGroup input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  filter: invert(0.5);
+  transition: opacity 0.2s ease;
+}
+
+.formGroup input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Focused Label */
+.formGroup.focused label {
+  color: var(--indigo-base);
+}
+
+/* Form Actions */
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-medium);
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, var(--indigo-base), #7c3aed);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.25);
+}
+
+.primaryButton:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+}
+
+.primaryButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
+}
+
+.primaryButton:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
+  transform: none;
+}
+
+.secondaryButton {
+  background-color: white;
+  color: var(--gray-dark);
+  border: 1.5px solid var(--gray-medium);
+}
+
+.secondaryButton:hover {
+  background-color: var(--gray-light);
+  border-color: #cbd5e1;
+  color: #334155;
+  transform: translateY(-2px);
+}
+
+.secondaryButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.15);
+}
+
+/* Spinner */
+.buttonSpinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s ease infinite;
+  margin-left: 0.5rem;
+}
+
+/* Notifications */
+.notification {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.errorNotification {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border-left: 4px solid #ef4444;
+}
+
+.successNotification {
+  background-color: #dcfce7;
+  color: #166534;
+  border-left: 4px solid #22c55e;
+}
+
+.notificationIcon {
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+  margin-right: 1rem;
+}
+
+.headerIcon {
+  margin-right: 0.75rem;
+  font-size: 1.5rem;
+  color: var(--indigo-dark);
+}
+.backButton:hover {
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -1px rgba(79, 70, 229, 0.4);
+}
+
+.backButton:active {
+  transform: translateY(0);
+}
+
+.backButton:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .formCard {
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
   .formHeader h2 {
-    color: #2c3e50;
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.025em;
-  }
-  
-  .headerIcon {
-    margin-right: 0.75rem;
-    color: #2c3e50; /* Indigo color for apprentice-specific styling */
     font-size: 1.5rem;
   }
-  
-  .backButton {
-    background-color: #f1f5f9;
-    border: none;
-    color: #2c3e50;
-    font-size: 1.25rem;
-    cursor: pointer;
-    margin-right: 1.25rem;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px;
-    height: 2.5rem;
-    width: 2.5rem;
-    transition: all 0.2s ease;
-  }
-  
-  .backButton:hover {
-    background-color: #e2e8f0;
-    color: #334155;
-    transform: translateX(-2px);
-  }
-  
-  .backButton:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
-  }
-  
-  /* Loading Container */
-  .loadingContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-    border: 1px solid #f1f5f9;
-  }
-  
-  .spinner {
-    border: 4px solid rgba(99, 102, 241, 0.1);
-    border-radius: 50%;
-    border-top: 4px solid #6366f1;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    margin-bottom: 1rem;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  .loadingContainer p {
-    color: #64748b;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-  
-  /* Card Container */
-  .cardContainer {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .formCard {
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-    padding: 2.5rem;
-    transition: all 0.3s ease;
-    border: 1px solid #f1f5f9;
-  }
-  
-  /* Form Groups */
-  .formGroup {
-    margin-bottom: 2rem;
-    position: relative;
-  }
-  
-  .formGroup label {
-    display: flex;
-    align-items: center;
-    color: #475569;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    font-size: 0.95rem;
-    transition: all 0.2s ease;
-  }
-  
-  .inputIcon {
-    margin-right: 0.5rem;
-    color: #2c3e50;
-    font-size: 1rem;
-  }
-  
-  .formGroup input {
-    width: 100%;
-    padding: 0.875rem 1rem;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background-color: #f8fafc;
-    color: #1e293b;
-  }
-  
-  .formGroup input:focus {
-    outline: none;
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-    background-color: white;
-  }
-  
-  .formGroup input::placeholder {
-    color: #94a3b8;
-    font-size: 0.95rem;
-  }
-  
-  /* Date Input Specific Styling */
-  .formGroup input[type="date"] {
-    font-family: inherit;
-    padding-right: 0.75rem;
-  }
-  
-  .formGroup input[type="date"]::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-    opacity: 0.6;
-    filter: invert(0.5);
-    transition: opacity 0.2s ease;
-  }
-  
-  .formGroup input[type="date"]::-webkit-calendar-picker-indicator:hover {
-    opacity: 1;
-  }
-  
-  /* Form Actions */
-  .formActions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #f1f5f9;
-  }
-  
-  .primaryButton, .secondaryButton {
-    padding: 0.75rem 1.75rem;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  
-  .primaryButton {
-    background-color: #2c3e50; /* Indigo for apprentice-specific styling */
-    color: white;
-    border: none;
-    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2), 0 2px 4px -1px rgba(99, 102, 241, 0.1);
-  }
-  
-  .primaryButton:hover {
-    background-color: #4f46e5;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 10px -1px rgba(99, 102, 241, 0.3), 0 2px 4px -1px rgba(99, 102, 241, 0.1);
-  }
-  
-  .primaryButton:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
-  }
-  
-  .secondaryButton {
-    background-color: white;
-    color: #475569;
-    border: 1.5px solid #e2e8f0;
-  }
-  
-  .secondaryButton:hover {
-    background-color: #f8fafc;
-    transform: translateY(-2px);
-    border-color: #cbd5e1;
-    color: #334155;
-  }
-  
-  .secondaryButton:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.15);
-  }
-  
-  .primaryButton:disabled {
-    background-color: #94a3b8;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-    opacity: 0.7;
-  }
-  
-  /* Button Spinner */
-  .buttonSpinner {
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    border: 2.5px solid rgba(255, 255, 255, 0.15);
-    border-radius: 50%;
-    border-top-color: white;
-    animation: spin 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite;
-    margin-left: 0.5rem;
-  }
-  
-  /* Notification Styles */
-  .notification {
-    padding: 1rem 1.25rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    font-weight: 500;
-    animation: slideIn 0.3s ease forwards;
-  }
-  
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .errorNotification {
-    background-color: #fee2e2;
-    color: #b91c1c;
-    border-left: 4px solid #ef4444;
-  }
-  
-  .successNotification {
-    background-color: #dcfce7;
-    color: #166534;
-    border-left: 4px solid #22c55e;
-  }
-  
-  .notificationIcon {
-    margin-right: 0.75rem;
-    flex-shrink: 0;
-  }
-  
-  /* Input Focus Effects */
-  .formGroup.focused label {
-    color: #6366f1;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .formContainer {
-      padding: 1.5rem 1rem;
-    }
-    
-    .formCard {
-      padding: 1.5rem;
-      border-radius: 12px;
-    }
-    
-    .formActions {
-      flex-direction: column;
-    }
-    
-    .primaryButton, .secondaryButton {
-      width: 100%;
-    }
-    
-    .formHeader h2 {
-      font-size: 1.5rem;
-    }
-  }
+}

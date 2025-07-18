@@ -189,7 +189,7 @@ const Sidebar = ({ isOpen, currentPath, onNavigation, onLogout }) => {
       {/* Sidebar header with logo */}
       <div className="sidebar-header">
         <div className="sidebar-logo">
-          <span className="logo-text">Clairo</span>
+          <span className="logo-text">CLAIRO</span>
         </div>
       </div>
 

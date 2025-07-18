@@ -43,7 +43,7 @@ const Header = ({ toggleSidebar, sidebarOpen, onLogout }) => {
         </button>
 
         {/* Page title */}
-        <h1 className="page-title">Clairo</h1>
+        <h1 className="page-title">CLAIRO</h1>
       </div>
 
       <div className="header-right">

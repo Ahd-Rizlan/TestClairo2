@@ -1324,7 +1324,9 @@ const CaseDetails = ({ userInfo }) => {
                       <td>
                         {new Date(update.previous_date).toLocaleDateString()}
                       </td>
-                      <td>{update.description}</td>
+                      <td className={styles.descriptionCell}>
+                        {update.description}
+                      </td>
                       <td>{update.next_step}</td>
                       <td>{new Date(update.next_date).toLocaleDateString()}</td>
                       <td>

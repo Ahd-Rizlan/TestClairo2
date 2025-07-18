@@ -2,16 +2,20 @@ import React, { useEffect, useState } from "react";
 import { supabase } from "../../supabaseClient";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   FaUserGraduate,
   FaPlus,
-  FaTrash,
-  FaEdit,
-  FaSearch,
   FaExclamationTriangle,
   FaArrowLeft,
 } from "react-icons/fa";
 
+import {
+  faTrashCan,
+  faEdit,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import styles from "./ApprenticeDetails.module.css";
 
 const ApprenticeDetails = () => {
@@ -152,7 +156,7 @@ const ApprenticeDetails = () => {
       {/* Search and filter */}
       <div className={styles.toolbarContainer}>
         <div className={styles.searchContainer}>
-          <FaSearch className={styles.searchIcon} />
+          <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
           <input
             type="text"
             placeholder={t("SearchApprentice")}
@@ -219,7 +223,7 @@ const ApprenticeDetails = () => {
                                 "Update Apprentice"
                               )}
                             >
-                              <FaEdit />
+                              <FontAwesomeIcon icon={faEdit} />
                             </button>
                             <button
                               onClick={() => handleDelete(apprentice.id)}
@@ -229,7 +233,7 @@ const ApprenticeDetails = () => {
                                 "Delete Apprentice"
                               )}
                             >
-                              <FaTrash />
+                              <FontAwesomeIcon icon={faTrashCan} />
                             </button>
                           </div>
                         </td>

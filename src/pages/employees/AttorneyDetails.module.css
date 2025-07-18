@@ -191,7 +191,7 @@
   margin-right: 1.5rem;
   opacity: 0.8;
 }
- 
+
 .cardContent {
   text-align: center;
 }
@@ -294,18 +294,19 @@
   box-shadow: 0 0 0 3px rgba(173, 181, 189, 0.15);
 }
 .tableCard {
- background: linear-gradient(135deg, #ffffff, #f8fafc);
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
   border: 1px solid #e2e8f0;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6th x-2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6th x-2px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
 .tableCard:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
-
 
 /* Table Styling */
 .tableResponsive {
@@ -322,7 +323,6 @@
   background: linear-gradient(135deg, #4f46e5, #7c3aed);
   color: white;
 }
-
 
 .lawyersTable th {
   padding: 1.25rem 1.5rem;
@@ -343,7 +343,6 @@
   transform: scale(1.001);
 }
 
-
 .lawyersTable tbody tr:last-child {
   border-bottom: none;
 }
@@ -357,7 +356,6 @@
   align-items: center;
   gap: 0.75rem;
 }
-
 
 /* Action Buttons */
 .actionButtons {
@@ -378,22 +376,22 @@
   transition: background-color 0.2s, transform 0.1s;
 }
 
-.editButton {
+/* .editButton {
   background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-  color: #1e40af;
+  color: #1e40af
   border: 1px solid #93c5fd;
-}
+} */
 
 .editButton:hover {
-background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+  background: linear-gradient(135deg, #bfdbfe, #93c5fd);
   transform: translateY(-1px);
   box-shadow: 0 4px 6px rgba(30, 64, 175, 0.2);
 }
 
 .deleteButton {
-  background: linear-gradient(135deg, #fecaca, #fca5a5);
+  /* background: linear-gradient(135deg, #fecaca, #fca5a5); */
   color: #dc2626;
-  border: 1px solid #f87171;
+  /* border: 1px solid #f87171; */
 }
 
 .deleteButton:hover {
@@ -401,7 +399,6 @@ background: linear-gradient(135deg, #bfdbfe, #93c5fd);
   transform: translateY(-1px);
   box-shadow: 0 4px 6px rgba(220, 38, 38, 0.2);
 }
-
 
 /* Empty State */
 .emptyState {

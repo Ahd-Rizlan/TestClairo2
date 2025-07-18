@@ -437,7 +437,23 @@
     padding: 0.75rem;
   }
 }
-/* Update this CSS in your CaseDetails.module.css */
+.descriptionCell {
+  max-width: 300px; /* You can adjust this width */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.descriptionCell:hover {
+  white-space: normal; /* Allow full content on hover */
+  overflow: visible;
+  background-color: #f1f5f9;
+  z-index: 1;
+  position: relative;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
 
 /* Modern Monochromatic Action Buttons */
 .actionButtons {

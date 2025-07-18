@@ -251,12 +251,14 @@
   border: 1px solid #e2e8f0;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6th x-2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6th x-2px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
 .tableCard:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .tableContainer {
@@ -344,11 +346,11 @@
   font-size: 0.875rem;
 }
 
-.editButton {
+/* .editButton {
   background: linear-gradient(135deg, #dbeafe, #bfdbfe);
   color: #1e40af;
   border: 1px solid #93c5fd;
-}
+} */
 
 .editButton:hover {
   background: linear-gradient(135deg, #bfdbfe, #93c5fd);
@@ -357,9 +359,9 @@
 }
 
 .deleteButton {
-  background: linear-gradient(135deg, #fecaca, #fca5a5);
+  /* background: linear-gradient(135deg, #fecaca, #fca5a5); */
   color: #dc2626;
-  border: 1px solid #f87171;
+  /* border: 1px solid #f87171; */
 }
 
 .deleteButton:hover {

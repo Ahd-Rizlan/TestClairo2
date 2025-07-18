@@ -27,7 +27,7 @@
 }
 
 .header h2 {
-  color:  linear-gradient(135deg, var(--indigo-base), #7c3aed);
+  color: linear-gradient(135deg, var(--indigo-base), #7c3aed);
 
   font-size: 1.75rem;
   font-weight: 700;
@@ -125,21 +125,21 @@
 }
 
 .searchButton {
-  background-color: #0f1a26;
+  background-color: #1e3a8a;
   color: white;
   border: none;
   border-radius: 6px;
   padding: 0.75rem 1.25rem;
   cursor: pointer;
   font-weight: 500;
-  transition: background-color 0.2s ease;
+  /* transition: background-color 0.2s ease; */
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .searchButton:hover {
-  background-color: #1e3a8a;
+  background-color: #3b82f6;
 }
 
 .caseTypeFilter {
